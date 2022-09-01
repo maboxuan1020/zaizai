@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Collection
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: infront
+  - name: player
     uniqueID: 1347378955
+    locked: 0
+  - name: icon
+    uniqueID: 487007271
     locked: 0
