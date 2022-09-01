@@ -10,8 +10,8 @@ public class playerControler : MonoBehaviour
     public Animator anim;
     public LayerMask ground;
     public Collider2D PlayerColl;
+    public int icon;
 
-    // Start is called before the first frame update
     void Start()
     {
         
@@ -23,7 +23,6 @@ public class playerControler : MonoBehaviour
         SwitchAnim();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         PlayerMovement();
@@ -49,7 +48,6 @@ public class playerControler : MonoBehaviour
         }
     }
 
-
     /// <summary>
     /// 玩家跳跃
     /// </summary>
@@ -62,6 +60,9 @@ public class playerControler : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 跳跃动画切换
+    /// </summary>
     void SwitchAnim()
     {
         anim.SetBool("Idle", false);
@@ -77,6 +78,19 @@ public class playerControler : MonoBehaviour
         {
             anim.SetBool("Falling", false);
             anim.SetBool("Idle", true);
+        }
+    }
+
+    /// <summary>
+    /// 收集物品
+    /// </summary>
+    /// <param name="collision">收集物的2d碰撞体</param>
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Collection")
+        {
+            Destroy(collision.gameObject);
+            icon += 1;
         }
     }
 
