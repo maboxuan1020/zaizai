@@ -28,6 +28,10 @@ public class playerControler : MonoBehaviour
         PlayerMovement();
     }
 
+    
+    
+    
+    
     /// <summary>
     /// 玩家移动
     /// </summary>
@@ -61,7 +65,7 @@ public class playerControler : MonoBehaviour
     }
 
     /// <summary>
-    /// 跳跃动画切换
+    /// 跳跃过程中动画切换
     /// </summary>
     void SwitchAnim()
     {
